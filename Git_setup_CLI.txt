@@ -1,0 +1,137 @@
+1. Check if Git is Installed
+Run:
+
+bash
+Copy
+Edit
+git --version
+If Git is installed, you'll see the version. If not, download and install Git.
+
+2. Set Your Name and Email (Required)
+Git requires your name and email for commits.
+
+bash
+Copy
+Edit
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+🔹 Replace "Your Name" with your actual name.
+🔹 Replace "your.email@example.com" with your email.
+
+3. Verify Configuration
+Check if your details are saved correctly:
+
+bash
+Copy
+Edit
+git config --global --list
+or check individual settings:
+
+bash
+Copy
+Edit
+git config --global user.name
+git config --global user.email
+4. Set Default Branch Name to main (Optional)
+Git defaults to master, but many use main now:
+
+bash
+Copy
+Edit
+git config --global init.defaultBranch main
+5. Configure Line Ending Handling (Recommended)
+For Windows users:
+
+bash
+Copy
+Edit
+git config --global core.autocrlf true
+For macOS/Linux users:
+
+bash
+Copy
+Edit
+git config --global core.autocrlf input
+6. Set Up SSH Key (If Using GitHub/GitLab)
+🔹 Check if an SSH key already exists:
+
+bash
+Copy
+Edit
+ls -al ~/.ssh
+🔹 Generate a new SSH key (if needed):
+
+bash
+Copy
+Edit
+ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
+Press Enter for default file location, set a passphrase if you want.
+
+🔹 Start SSH agent & add key:
+
+bash
+Copy
+Edit
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+🔹 Copy the public key and add it to GitHub/GitLab:
+
+bash
+Copy
+Edit
+cat ~/.ssh/id_rsa.pub
+Paste this in GitHub (under Settings → SSH & GPG keys).
+
+7. Test SSH Connection (If Using SSH)
+bash
+Copy
+Edit
+ssh -T git@github.com
+If successful, you'll see:
+
+bash
+Copy
+Edit
+Hi <your-username>! You've successfully authenticated...
+8. Initialize a New Repository (If Needed)
+bash
+Copy
+Edit
+mkdir my_project && cd my_project
+git init
+To check the initialized repository:
+
+bash
+Copy
+Edit
+git status
+9. Clone an Existing Repository
+If you have an existing GitHub/GitLab repo:
+
+bash
+Copy
+Edit
+git clone git@github.com:your-username/repository-name.git
+or using HTTPS:
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/repository-name.git
+10. Set Up Git Aliases (Optional)
+bash
+Copy
+Edit
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.cm commit
+git config --global alias.st status
+Now you can use:
+
+bash
+Copy
+Edit
+git co   # Instead of git checkout
+git br   # Instead of git branch
+git cm   # Instead of git commit
+git st   # Instead of git status
