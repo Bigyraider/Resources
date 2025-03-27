@@ -61,3 +61,43 @@ print(find_first_and_last(arr, x))  # Output: [6, 8]
 
 x = 10
 print(find_first_and_last(arr, x))  # Output: [-1, -1]
+
+
+
+#####################Solved using 2 functions#####################
+class Solution:
+    def find(self, arr, x):
+        def binary_search_first(arr,x):
+            low = 0
+            high = len(arr)-1
+            first_index=-1
+            while (low<=high):
+                mid=(low+high)//2
+                if arr[mid]==x:
+                    first_index=mid
+                    high=mid-1 #move left first
+                elif arr[mid]>x:
+                    high=mid-1
+                else:
+                    low=mid+1
+            return first_index
+            
+        def binary_search_last(arr,x):
+            low = 0
+            high = len(arr)-1
+            last_index=-1
+            while (low<=high):
+                mid=(low+high)//2
+                if arr[mid]==x:
+                    last_index=mid
+                    low=mid+1 #move left first
+                elif arr[mid]>x:
+                    high=mid-1
+                else:
+                    low=mid+1
+            return last_index
+            
+        first = binary_search_first(arr,x)
+        last = binary_search_last(arr,x)
+        
+        return (first, last)
