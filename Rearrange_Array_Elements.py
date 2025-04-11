@@ -11,7 +11,7 @@
 # Input: nums = [3,1,-2,-5,2,-4]
 # Output: [3,-2,1,-5,2,-4]
 
-def rearrangeArray(self, nums: List[int]) -> List[int]:
+def rearrangeArray(self, nums):
     result=[0]*len(nums)
     pos_idx=0
     neg_idx=1
