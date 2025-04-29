@@ -1,0 +1,8 @@
+1) vim .gitignore
+2) add files that you wanna ignore
+3) then remove if they are already cached or in git status showing added.
+    - git rm --cached .env
+    - git rm -r --cached cache/   (for multiple files inside a directory)
+4) git add .gitignore
+5) git commit
+6) git push

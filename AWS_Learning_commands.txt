@@ -1,0 +1,3 @@
+==========KEY_NOTES===============
+1) IF you don't want to run sudo everytime when using docker command in aws ubuntu machine.
+Ans)  run command = sudo usermod -aG docker ubuntu  //Adding ubuntu user to docker group
